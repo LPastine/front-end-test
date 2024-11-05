@@ -1,6 +1,10 @@
 import styles from "./ProductCard.module.css";
 import { formatCurrency } from "../../../utils";
 import { Product } from "../../../typings/products";
+import {
+  useCartContext,
+  useCartContextDispatch,
+} from "../../../context/CartContext";
 
 interface ProductCardProps {
   product: Product;
@@ -16,6 +20,22 @@ const ProductCard = ({ product }: ProductCardProps) => {
     price,
     installments,
   } = product;
+
+  const { productsOnCart } = useCartContext();
+  const dispatch = useCartContextDispatch();
+
+  const onClickHandler = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+
+    dispatch({
+      type: "UPDATE_QUANTITY",
+      args: {
+        quantity: productsOnCart + 1,
+      },
+    });
+  };
 
   return (
     <div key={`product-card-${productId}`} className={`${styles.ProductCard}`}>
@@ -59,7 +79,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
         })}
       </div>
       <div className={`${styles.ProductCard__buyButtonContainer}`}>
-        <button className={`${styles.ProductCard__buyButton}`}>COMPRAR</button>
+        <button
+          onClick={(e) => onClickHandler(e)}
+          className={`${styles.ProductCard__buyButton}`}
+        >
+          COMPRAR
+        </button>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
 import { Header, Home, Footer } from "./components/organisms";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
     <>
-      <Header />
-      <Home />
-      <Footer />
+      <CartProvider>
+        <Header />
+        <Home />
+        <Footer />
+      </CartProvider>
     </>
   );
 }
