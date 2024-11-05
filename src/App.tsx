@@ -1,16 +1,12 @@
-import './App.css';
-import { Home } from './components/Home';
-import { Login } from './components/Login';
-import { Settings } from './components/Settings';
-import { LoginProvider } from './context/LoginContext';
+import { Header, Home, Footer } from "./components/organisms";
 
 function App() {
   return (
-    <LoginProvider>
-      <Login />
+    <>
+      <Header />
       <Home />
-      <Settings />
-    </LoginProvider>
+      <Footer />
+    </>
   );
 }
 export default App;
