@@ -1,0 +1,48 @@
+.ProductCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductCard__productName {
+  display: flex;
+}
+
+.ProductCard__stars {
+  display: flex;
+}
+
+.ProductCard__imgWrapper {
+  display: flex;
+}
+
+.ProductCard__img {
+  display: flex;
+}
+
+.ProductCard__listPrice {
+  display: flex;
+}
+
+.ProductCard__price {
+  display: flex;
+}
+
+.ProductCard__installments {
+  display: flex;
+}
+
+.ProductCard__installments__quantity {
+  display: flex;
+}
+
+.ProductCard__installments__value {
+  display: flex;
+}
+
+.ProductCard__buyButtonContainer {
+  display: flex;
+}
+
+.ProductCard__buyButton {
+  display: flex;
+}
