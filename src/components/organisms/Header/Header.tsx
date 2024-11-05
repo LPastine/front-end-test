@@ -1,9 +1,14 @@
+import { SearchBar, Login, Cart } from "../../atoms";
 import styles from "./Header.module.css";
+import Logo from "./icons/Logo";
 
 const Header = () => {
   return (
     <div className={`${styles.Header}`}>
-      <div>Header</div>
+      <Logo />
+      <SearchBar />
+      <Login />
+      <Cart />
     </div>
   );
 };
