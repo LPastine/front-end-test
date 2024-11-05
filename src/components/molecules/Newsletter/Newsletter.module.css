@@ -1,0 +1,8 @@
+.Newsletter {
+  display: flex;
+  flex-direction: column;
+}
+
+.Newsletter__title {
+  display: flex;
+}
