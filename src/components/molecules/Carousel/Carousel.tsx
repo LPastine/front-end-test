@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./Carousel.module.css";
 import { Product } from "../../../typings/products";
 import ProductCard from "../../atoms/ProductCard";
+import useDevice from "../../../hooks/useDevice";
 
 interface CarouselProps {
   products: Product[];
@@ -11,14 +12,11 @@ const Carousel = ({ products }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
 
+  const isMobile = useDevice();
+
   useEffect(() => {
-    const updateItemsPerSlide = () => {
-      setItemsPerSlide(window.innerWidth < 768 ? 1 : 4);
-    };
-    window.addEventListener("resize", updateItemsPerSlide);
-    updateItemsPerSlide();
-    return () => window.removeEventListener("resize", updateItemsPerSlide);
-  }, []);
+    setItemsPerSlide(isMobile ? 1 : 4);
+  }, [isMobile]);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
