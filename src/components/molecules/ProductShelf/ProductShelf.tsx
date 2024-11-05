@@ -1,5 +1,6 @@
 import { useProducts } from "../../../hooks/useProducts";
 import styles from "./ProductShelf.module.css";
+import { formatCurrency } from "../../../utils";
 
 const ProductShelf = () => {
   const { products, error, loading } = useProducts();
@@ -21,21 +22,35 @@ const ProductShelf = () => {
         } = product;
 
         return (
-          <div className={`${styles.ProductShelf__card}`}>
-            <div className={`${styles.ProductShelf__card__productId}`}>
-              {productId}
+          <div
+            key={`product-card-${productId}`}
+            className={`${styles.ProductShelf__card}`}
+          >
+            <div className={`${styles.ProductShelf__card__imgWrapper}`}>
+              <img
+                src={imageUrl}
+                alt={`product-card-img-${productId}`}
+                className={`${styles.ProductShelf__card__img}`}
+              />
             </div>
             <div className={`${styles.ProductShelf__card__productName}`}>
               {productName}
             </div>
-            <div className={`${styles.ProductShelf__card__stars}`}>{stars}</div>
-            <div className={`${styles.ProductShelf__card__img}`}>
-              {imageUrl}
+            {stars && (
+              <div className={`${styles.ProductShelf__card__stars}`}>
+                {stars}
+              </div>
+            )}
+            {listPrice && (
+              <div className={`${styles.ProductShelf__card__listPrice}`}>
+                {`de `}
+                {formatCurrency(listPrice)}
+              </div>
+            )}
+            <div className={`${styles.ProductShelf__card__price}`}>
+              {`por `}
+              {formatCurrency(price)}
             </div>
-            <div className={`${styles.ProductShelf__card__listPrice}`}>
-              {listPrice}
-            </div>
-            <div className={`${styles.ProductShelf__card__price}`}>{price}</div>
             <div className={`${styles.ProductShelf__card__installments}`}>
               {installments.map((installment) => {
                 const { quantity, value } = installment;
@@ -43,18 +58,23 @@ const ProductShelf = () => {
                 return (
                   <>
                     <div
+                      key={`${productId}-installment-${quantity}`}
                       className={`${styles.ProductShelf__card__installments__quantity}`}
                     >
+                      {`ou em `}
                       {quantity}
-                    </div>
-                    <div
-                      className={`${styles.ProductShelf__card__installments__value}`}
-                    >
-                      {value}
+                      {`x`}
+                      {` de `}
+                      {formatCurrency(value)}
                     </div>
                   </>
                 );
               })}
+            </div>
+            <div className={`${styles.ProductShelf__card__buyButtonContainer}`}>
+              <button className={`${styles.ProductShelf__card__buyButton}`}>
+                COMPRAR
+              </button>
             </div>
           </div>
         );
