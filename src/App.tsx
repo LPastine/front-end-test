@@ -1,5 +1,6 @@
 import { Header, Home, Footer } from "./components/organisms";
 import { CartProvider } from "./context/CartContext";
+import "./App.module.css";
 
 function App() {
   return (

@@ -1,4 +1,15 @@
 .Login {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.Login__label {
+  color: #7a7a7a;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
 }

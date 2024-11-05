@@ -1,3 +1,56 @@
 .Header {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  background: #fff;
+}
+
+.Header__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .Header__container {
+    max-width: 1238px;
+    width: 86%;
+    gap: 121px;
+  }
+}
+
+.Header__logo {
+  width: 181px;
+}
+
+.Header__userActions {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header__searchBarContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 718px;
+  width: 77%;
+}
+
+.Header__loginCartContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 175px;
+  width: 18%;
+  gap: 21px;
 }

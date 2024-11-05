@@ -1,4 +1,30 @@
 .Cart {
   display: flex;
   flex-direction: row;
+  gap: 4px;
+}
+
+.Cart__quantityContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-width: 14px;
+  min-height: 14px;
+}
+
+.Cart__icon {
+  display: flex;
+}
+
+.Cart__quantity {
+  width: 14px;
+  height: 14px;
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: #f8475f;
+  text-align: center;
+  border-radius: 100%;
 }

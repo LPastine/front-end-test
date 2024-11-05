@@ -7,8 +7,14 @@ const Cart = () => {
 
   return (
     <div className={`${styles.Cart}`}>
-      <CartIcon />
-      <div className={`${styles.Cart__quantity}`}>{productsOnCart}</div>
+      <div className={`${styles.Cart__icon}`}>
+        <CartIcon />
+      </div>
+      <div className={`${styles.Cart__quantityContainer}`}>
+        {productsOnCart > 0 && (
+          <div className={`${styles.Cart__quantity}`}>{productsOnCart}</div>
+        )}
+      </div>
     </div>
   );
 };
