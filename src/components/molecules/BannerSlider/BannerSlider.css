@@ -56,6 +56,13 @@
   pointer-events: auto;
 }
 
+@media (max-width: 768px) {
+  .banner-slider__bullet {
+    width: 7px;
+    height: 7px;
+  }
+}
+
 .banner-slider__bullet.active {
   background-color: #f8475f;
 }
