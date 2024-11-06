@@ -1,3 +1,141 @@
 .Footer {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #000;
+}
+
+.Footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 32px 0;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .Footer__container {
+    flex-direction: column;
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .Footer__container {
+    max-width: 1238px;
+    width: 86%;
+  }
+}
+
+.Footer__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Footer__contactButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.Footer__contactButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 195px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+  border: none;
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+  padding: 5px 17px;
+  font-family: "Nunito", sans-serif;
+}
+
+.Footer__contactButton__icon {
+  display: flex;
+  width: 16px;
+  height: 19px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Footer__bottom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #fff;
+}
+
+.Footer__brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  height: 19px;
+}
+
+.Footer__brand__text {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 10.602px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px;
+}
+
+.Footer__localization {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.Footer__localization__title {
+  display: flex;
+  margin: 0 0 8px 0;
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Footer__localization__title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 65px;
+  height: 4.297px;
+  background-color: #c0c0c0;
+}
+
+.Footer__localization__text {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
 }
