@@ -68,76 +68,82 @@ const Newsletter = () => {
 
   return (
     <section id="newsletter" className={styles.Newsletter}>
-      {!submitSucceded && (
-        <>
-          <h2 className={styles.Newsletter__title}>
-            Participe de nossas news com promoções e novidades!
-          </h2>
-          <form
-            className={`${styles.Newsletter__form}`}
-            onSubmit={handleSubmit}
-          >
-            <div className={`${styles.Newsletter__emailWrapper}`}>
-              <input
-                required
-                maxLength={50}
-                value={user.name || ""}
-                onChange={handleChange("name")}
-                type="text"
-                placeholder="Digite seu nome"
-                className={`${styles.Newsletter__emailInput}`}
-              />
-              {errors.name && (
-                <div
-                  id="Newsletter__nameAlert"
-                  className={`${styles.Newsletter__emailAlert}`}
-                >
-                  {errors.name}
-                </div>
-              )}
-            </div>
-            <div className={`${styles.Newsletter__emailWrapper}`}>
-              <input
-                required
-                maxLength={50}
-                value={user.email || ""}
-                onChange={handleChange("email")}
-                type="text"
-                placeholder="Digite seu email"
-                className={`${styles.Newsletter__emailInput}`}
-              />
-              {errors.email && (
-                <div
-                  id="Newsletter__emailAlert"
-                  className={`${styles.Newsletter__emailAlert}`}
-                >
-                  {errors.email}
-                </div>
-              )}
-            </div>
-            <button type="submit" className={`${styles.Newsletter__button}`}>
-              {loading ? "Carregando..." : "Eu quero!"}
-            </button>
-          </form>
-        </>
-      )}
+      <div id="newsletter" className={styles.Newsletter__container}>
+        {!submitSucceded && (
+          <>
+            <h2 className={styles.Newsletter__title}>
+              Participe de nossas news com promoções e novidades!
+            </h2>
+            <form
+              className={`${styles.Newsletter__form}`}
+              onSubmit={handleSubmit}
+            >
+              <div className={`${styles.Newsletter__nameWrapper}`}>
+                <input
+                  required
+                  maxLength={50}
+                  value={user.name || ""}
+                  onChange={handleChange("name")}
+                  type="text"
+                  placeholder="Digite seu nome"
+                  className={`${styles.Newsletter__nameInput} ${
+                    errors.name && styles.Newsletter__nameInputError
+                  }`}
+                />
+                {errors.name && (
+                  <div
+                    id="Newsletter__nameAlert"
+                    className={`${styles.Newsletter__nameAlert}`}
+                  >
+                    {errors.name}
+                  </div>
+                )}
+              </div>
+              <div className={`${styles.Newsletter__emailWrapper}`}>
+                <input
+                  required
+                  maxLength={50}
+                  value={user.email || ""}
+                  onChange={handleChange("email")}
+                  type="text"
+                  placeholder="Digite seu email"
+                  className={`${styles.Newsletter__emailInput} ${
+                    errors.email && styles.Newsletter__emailInputError
+                  }`}
+                />
+                {errors.email && (
+                  <div
+                    id="Newsletter__emailAlert"
+                    className={`${styles.Newsletter__emailAlert}`}
+                  >
+                    {errors.email}
+                  </div>
+                )}
+              </div>
+              <button type="submit" className={`${styles.Newsletter__button}`}>
+                {loading ? "Carregando..." : "Eu quero!"}
+              </button>
+            </form>
+          </>
+        )}
 
-      {!loading && submitSucceded && (
-        <div className={`${styles.Newsletter__success}`}>
-          <p className={`${styles.Newsletter__success__title}`}>
-            Seu e-mail foi cadastrado com sucesso!
-          </p>
-          <p className={`${styles.Newsletter__success__subTitle}`}>
-            A partir de agora você receberá as novidades e ofertas exclusivas.
-          </p>
-          <button
-            onClick={(e) => handleRetryButton(e)}
-            className={`${styles.Newsletter__retryButton}`}
-          >
-            Cadastrar novo e-mail
-          </button>
-        </div>
-      )}
+        {!loading && submitSucceded && (
+          <div className={`${styles.Newsletter__success}`}>
+            <p className={`${styles.Newsletter__success__title}`}>
+              Seu e-mail foi cadastrado com sucesso!
+            </p>
+            <p className={`${styles.Newsletter__success__subTitle}`}>
+              A partir de agora você receberá as novidades e ofertas exclusivas.
+            </p>
+            <button
+              onClick={(e) => handleRetryButton(e)}
+              className={`${styles.Newsletter__retryButton}`}
+            >
+              Cadastrar novo e-mail
+            </button>
+          </div>
+        )}
+      </div>
     </section>
   );
 };

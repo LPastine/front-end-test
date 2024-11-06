@@ -1,4 +1,4 @@
-import { Header, Home, Footer } from "./components/organisms";
+import { Header, Home } from "./components/organisms";
 import { CartProvider } from "./context/CartContext";
 import "./App.module.css";
 
@@ -8,7 +8,7 @@ function App() {
       <CartProvider>
         <Header />
         <Home />
-        <Footer />
+        {/* <Footer /> */}
       </CartProvider>
     </>
   );

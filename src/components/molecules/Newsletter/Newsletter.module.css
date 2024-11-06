@@ -1,8 +1,146 @@
 .Newsletter {
   display: flex;
   flex-direction: column;
+  background-color: #f2f2f2;
+  padding: 24px 0 36px 0;
+}
+
+.Newsletter__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .Newsletter__container {
+    max-width: 1238px;
+    width: 86%;
+    gap: 16px;
+  }
 }
 
 .Newsletter__title {
   display: flex;
+  margin: 0;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.Newsletter__form {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.Newsletter__nameWrapper,
+.Newsletter__emailWrapper {
+}
+
+.Newsletter__nameInput,
+.Newsletter__emailInput {
+  width: 280px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  padding-left: 16px;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  background: #fff;
+  margin-bottom: 8px;
+}
+
+.Newsletter__nameInputError,
+.Newsletter__emailInputError {
+  border: 1px solid #d7182a;
+}
+
+.Newsletter__nameAlert,
+.Newsletter__emailAlert {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  color: #d7182a;
+}
+
+.Newsletter__button {
+  display: flex;
+  width: 140px;
+  height: 52px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  background: #000;
+  border-radius: 5px;
+  border: none;
+}
+
+.Newsletter__button:hover {
+  background: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+}
+
+.Newsletter__success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Newsletter__success__title {
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  margin: 0;
+}
+
+.Newsletter__success__subTitle {
+  color: #333;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  margin: 0;
+}
+
+.Newsletter__retryButton {
+  margin-top: 15px;
+  display: flex;
+  width: 328px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  background: #000;
+  border-radius: 5px;
+  border: none;
+}
+
+.Newsletter__retryButton:hover {
+  background: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
 }
