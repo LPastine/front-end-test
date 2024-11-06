@@ -4,6 +4,7 @@
   min-height: 353px;
   min-width: 216px;
   justify-content: space-between;
+  position: relative;
 }
 
 .ProductCard__content {
@@ -12,6 +13,11 @@
   justify-content: space-between;
   align-items: center;
   min-height: 146px;
+  background-color: #fff;
+}
+
+.ProductCard:hover .ProductCard__content {
+  background-color: #e6e8ea;
 }
 
 .ProductCard__imgWrapper {
@@ -31,6 +37,8 @@
   font-weight: 600;
   line-height: normal;
   min-height: 17px;
+  margin-top: 7px;
+  max-width: 90%;
 }
 
 .ProductCard__starsWrapper {
@@ -91,6 +99,8 @@
 .ProductCard__buyButtonContainer {
   display: flex;
   min-height: 33px;
+  padding-top: 8px;
+  padding-bottom: 14px;
 }
 
 .ProductCard__buyButton {
@@ -111,6 +121,19 @@
   border-radius: 5px;
   background: #000;
   border: none;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Fade effect when it appears */
+}
+
+.ProductCard:hover .ProductCard__buyButton {
+  opacity: 1; /* Show the button when hovering over the card */
+}
+
+@media (max-width: 768px) {
+  /* Hide the hover effect for mobile and only show the button based on isMobile */
+  .ProductCard:hover .ProductCard__buyButton {
+    opacity: 1; /* Keep the button visible while hovering on mobile */
+  }
 }
 
 .ProductCard__buyButton:hover {

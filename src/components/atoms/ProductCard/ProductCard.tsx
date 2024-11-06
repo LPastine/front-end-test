@@ -52,10 +52,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {productName}
         </div>
         <div className={`${styles.ProductCard__starsWrapper}`}>
-          {stars && (
-            // <div className={`${styles.ProductCard__stars}`}>{stars}</div>
-            <RatingStars rating={stars} />
-          )}
+          {stars && <RatingStars rating={stars} />}
         </div>
         <div className={`${styles.ProductCard__listPriceWrapper}`}>
           {listPrice && (
