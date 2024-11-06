@@ -46,45 +46,55 @@ const ProductCard = ({ product }: ProductCardProps) => {
           className={`${styles.ProductCard__img}`}
         />
       </div>
-      <div className={`${styles.ProductCard__productName}`}>{productName}</div>
-      {stars && <div className={`${styles.ProductCard__stars}`}>{stars}</div>}
-      {listPrice && (
-        <div className={`${styles.ProductCard__listPrice}`}>
-          {`de `}
-          {formatCurrency(listPrice)}
+      <div className={`${styles.ProductCard__content}`}>
+        <div className={`${styles.ProductCard__productName}`}>
+          {productName}
         </div>
-      )}
-      <div className={`${styles.ProductCard__price}`}>
-        {`por `}
-        {formatCurrency(price)}
-      </div>
-      <div className={`${styles.ProductCard__installments}`}>
-        {installments.map((installment) => {
-          const { quantity, value } = installment;
+        <div className={`${styles.ProductCard__starsWrapper}`}>
+          {stars && (
+            <div className={`${styles.ProductCard__stars}`}>{stars}</div>
+          )}
+        </div>
+        <div className={`${styles.ProductCard__listPriceWrapper}`}>
+          {listPrice && (
+            <div className={`${styles.ProductCard__listPrice}`}>
+              {`de `}
+              {formatCurrency(listPrice)}
+            </div>
+          )}
+        </div>
+        <div className={`${styles.ProductCard__price}`}>
+          {`por `}
+          {formatCurrency(price)}
+        </div>
+        <div className={`${styles.ProductCard__installments}`}>
+          {installments.map((installment) => {
+            const { quantity, value } = installment;
 
-          return (
-            <>
-              <div
-                key={`${productId}-installment-${quantity}`}
-                className={`${styles.ProductCard__installments__quantity}`}
-              >
-                {`ou em `}
-                {quantity}
-                {`x`}
-                {` de `}
-                {formatCurrency(value)}
-              </div>
-            </>
-          );
-        })}
-      </div>
-      <div className={`${styles.ProductCard__buyButtonContainer}`}>
-        <button
-          onClick={(e) => onClickHandler(e)}
-          className={`${styles.ProductCard__buyButton}`}
-        >
-          COMPRAR
-        </button>
+            return (
+              <>
+                <div
+                  key={`${productId}-installment-${quantity}`}
+                  className={`${styles.ProductCard__installments__quantity}`}
+                >
+                  {`ou em `}
+                  {quantity}
+                  {`x`}
+                  {` de `}
+                  {formatCurrency(value)}
+                </div>
+              </>
+            );
+          })}
+        </div>
+        <div className={`${styles.ProductCard__buyButtonContainer}`}>
+          <button
+            onClick={(e) => onClickHandler(e)}
+            className={`${styles.ProductCard__buyButton}`}
+          >
+            COMPRAR
+          </button>
+        </div>
       </div>
     </div>
   );
