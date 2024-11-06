@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./Carousel.module.css";
 import { Product } from "../../../typings/products";
 import ProductCard from "../../atoms/ProductCard";
-// import useDevice from "../../../hooks/useDevice";
+import useDevice from "../../../hooks/useDevice";
 import LeftArrow from "./icons/LeftArrow";
 import RightArrow from "./icons/RightArrow";
 
@@ -14,11 +14,10 @@ const Carousel = ({ products }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
 
-  // const isMobile = useDevice();
-  const isMobile = true;
+  const isMobile = useDevice();
 
   useEffect(() => {
-    setItemsPerSlide(isMobile ? 2 : 4);
+    setItemsPerSlide(isMobile ? 1 : 4);
   }, [isMobile]);
 
   const handlePrev = () => {

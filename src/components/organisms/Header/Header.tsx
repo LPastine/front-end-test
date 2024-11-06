@@ -1,4 +1,4 @@
-// import useDevice from "../../../hooks/useDevice";
+import useDevice from "../../../hooks/useDevice";
 import { SearchBar, Login, Cart } from "../../atoms";
 import styles from "./Header.module.css";
 import HamburgerMenu from "./icons/HamburgerMenu";
@@ -6,9 +6,7 @@ import Logo from "./icons/Logo";
 import LogoMobile from "./icons/LogoMobile";
 
 const Header = () => {
-  // const isMobile = useDevice()
-
-  let isMobile = true;
+  const isMobile = useDevice();
 
   return (
     <header className={`${styles.Header}`}>

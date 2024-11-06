@@ -14,6 +14,12 @@
   justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .Carousel__container {
+    justify-content: center;
+  }
+}
+
 .Carousel__prevBtn,
 .Carousel__nextBtn {
   position: absolute;

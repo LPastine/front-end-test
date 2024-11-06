@@ -7,6 +7,12 @@
   gap: 26px;
 }
 
+@media (max-width: 768px) {
+  .ProductShelf {
+    width: 90%;
+  }
+}
+
 @media (min-width: 768px) {
   .ProductShelf {
     max-width: 1238px;

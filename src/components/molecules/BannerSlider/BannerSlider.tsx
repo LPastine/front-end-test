@@ -1,14 +1,27 @@
 import { useState, useEffect } from "react";
 import "./BannerSlider.css";
+import useDevice from "../../../hooks/useDevice";
 
 const BannerSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const banners = [
+
+  const isMobile = useDevice();
+
+  const desktopBanners = [
     "/banner-01.png",
     "/banner-02.png",
     "/banner-01.png",
     "/banner-02.png",
   ];
+
+  const mobileBanners = [
+    "/banner-mb-01.png",
+    "/banner-mb-02.png",
+    "/banner-mb-01.png",
+    "/banner-mb-02.png",
+  ];
+
+  const banners = !isMobile ? desktopBanners : mobileBanners;
 
   useEffect(() => {
     const interval = setInterval(() => {
