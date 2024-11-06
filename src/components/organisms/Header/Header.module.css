@@ -16,6 +16,14 @@
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .Header__container {
+    flex-direction: column;
+    width: 90%;
+    gap: 14px;
+  }
+}
+
 @media (min-width: 768px) {
   .Header__container {
     max-width: 1238px;
@@ -26,6 +34,13 @@
 
 .Header__logo {
   width: 181px;
+}
+
+@media (max-width: 768px) {
+  .Header__logo {
+    width: 109px;
+    height: 25px;
+  }
 }
 
 .Header__userActions {
@@ -43,6 +58,21 @@
   justify-content: flex-start;
   max-width: 718px;
   width: 77%;
+}
+
+@media (max-width: 768px) {
+  .Header__searchBarContainer {
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+.Header__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .Header__loginCartContainer {

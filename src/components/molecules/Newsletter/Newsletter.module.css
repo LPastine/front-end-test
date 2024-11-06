@@ -13,6 +13,14 @@
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .Newsletter__container {
+    width: 90%;
+    align-items: flex-start;
+    gap: 19px;
+  }
+}
+
 @media (min-width: 768px) {
   .Newsletter__container {
     max-width: 1238px;
@@ -36,6 +44,14 @@
   gap: 4px;
 }
 
+@media (max-width: 768px) {
+  .Newsletter__form {
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+  }
+}
+
 .Newsletter__nameWrapper,
 .Newsletter__emailWrapper {
 }
@@ -56,6 +72,20 @@
   border: 1px solid #bdbdbd;
   background: #fff;
   margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .Newsletter__nameInput,
+  .Newsletter__emailInput {
+    width: calc(100% - 20px);
+  }
+
+  .Newsletter__nameWrapper,
+  .Newsletter__emailWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .Newsletter__nameInputError,
@@ -90,6 +120,12 @@
   border: none;
 }
 
+@media (max-width: 768px) {
+  .Newsletter__button {
+    width: 100%;
+  }
+}
+
 .Newsletter__button:hover {
   background: rgba(0, 0, 0, 0.85);
   cursor: pointer;
@@ -103,6 +139,8 @@
 }
 
 .Newsletter__success__title {
+  display: flex;
+  width: 100%;
   color: #000;
   text-align: center;
   font-size: 14px;
@@ -110,6 +148,13 @@
   font-weight: 700;
   line-height: 14px;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .Newsletter__success__title,
+  .Newsletter__success__subTitle {
+    text-align: left;
+  }
 }
 
 .Newsletter__success__subTitle {
@@ -143,4 +188,10 @@
 .Newsletter__retryButton:hover {
   background: rgba(0, 0, 0, 0.85);
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .Newsletter__retryButton {
+    width: 100%;
+  }
 }
