@@ -121,18 +121,22 @@
   border-radius: 5px;
   background: #000;
   border: none;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Fade effect when it appears */
 }
 
-.ProductCard:hover .ProductCard__buyButton {
-  opacity: 1; /* Show the button when hovering over the card */
+@media (min-width: 768px) {
+  .ProductCard__buyButton {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ProductCard:hover .ProductCard__buyButton {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
-  /* Hide the hover effect for mobile and only show the button based on isMobile */
   .ProductCard:hover .ProductCard__buyButton {
-    opacity: 1; /* Keep the button visible while hovering on mobile */
+    opacity: 1;
   }
 }
 
