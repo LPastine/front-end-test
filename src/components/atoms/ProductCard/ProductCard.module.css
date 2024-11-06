@@ -115,6 +115,7 @@
 
 .ProductCard__buyButton:hover {
   background: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
 }
 
 .ProductCard__buyButtonLabel {

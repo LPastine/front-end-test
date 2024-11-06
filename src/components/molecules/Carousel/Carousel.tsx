@@ -3,6 +3,8 @@ import styles from "./Carousel.module.css";
 import { Product } from "../../../typings/products";
 import ProductCard from "../../atoms/ProductCard";
 import useDevice from "../../../hooks/useDevice";
+import LeftArrow from "./icons/LeftArrow";
+import RightArrow from "./icons/RightArrow";
 
 interface CarouselProps {
   products: Product[];
@@ -47,10 +49,10 @@ const Carousel = ({ products }: CarouselProps) => {
         ))}
       </div>
       <button className={styles.Carousel__prevBtn} onClick={handlePrev}>
-        {`<`}
+        <LeftArrow />
       </button>
       <button className={styles.Carousel__nextBtn} onClick={handleNext}>
-        {`>`}
+        <RightArrow />
       </button>
     </div>
   );

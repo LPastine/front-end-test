@@ -19,6 +19,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  background: transparent;
+  border: none;
+}
+
+.Carousel__prevBtn:hover,
+.Carousel__nextBtn:hover {
+  cursor: pointer;
 }
 
 .Carousel__prevBtn {
