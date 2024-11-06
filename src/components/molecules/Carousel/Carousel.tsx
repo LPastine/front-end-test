@@ -17,7 +17,7 @@ const Carousel = ({ products }: CarouselProps) => {
   const isMobile = useDevice();
 
   useEffect(() => {
-    setItemsPerSlide(isMobile ? 1 : 4);
+    setItemsPerSlide(isMobile ? 2 : 4);
   }, [isMobile]);
 
   const handlePrev = () => {

@@ -1,10 +1,16 @@
-import { useProducts } from "../../../hooks/useProducts";
+import { mockedProductsArray } from "../../../__mocks__/products";
+// import { useProducts } from "../../../hooks/useProducts";
 import { Skeleton } from "../../atoms";
 import Carousel from "../Carousel";
 import styles from "./ProductShelf.module.css";
 
 const ProductShelf = () => {
-  const { products, error, loading } = useProducts();
+  // const { products, error, loading } = useProducts();
+  const MOCKED_PRODUCTS_DATA = mockedProductsArray;
+
+  let loading = false;
+  let products = MOCKED_PRODUCTS_DATA;
+  let error = false;
 
   if (error) return null;
 
