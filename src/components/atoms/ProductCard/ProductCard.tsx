@@ -5,6 +5,7 @@ import {
   useCartContext,
   useCartContextDispatch,
 } from "../../../context/CartContext";
+import RatingStars from "../RatingStars";
 
 interface ProductCardProps {
   product: Product;
@@ -52,7 +53,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <div className={`${styles.ProductCard__starsWrapper}`}>
           {stars && (
-            <div className={`${styles.ProductCard__stars}`}>{stars}</div>
+            // <div className={`${styles.ProductCard__stars}`}>{stars}</div>
+            <RatingStars rating={stars} />
           )}
         </div>
         <div className={`${styles.ProductCard__listPriceWrapper}`}>
@@ -92,7 +94,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
             onClick={(e) => onClickHandler(e)}
             className={`${styles.ProductCard__buyButton}`}
           >
-            COMPRAR
+            <label className={`${styles.ProductCard__buyButtonLabel}`}>
+              COMPRAR
+            </label>
           </button>
         </div>
       </div>

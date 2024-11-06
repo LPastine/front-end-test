@@ -90,8 +90,44 @@
 
 .ProductCard__buyButtonContainer {
   display: flex;
+  min-height: 33px;
 }
 
 .ProductCard__buyButton {
   display: flex;
+  margin: 0;
+  padding: 0;
+  width: 125.28px;
+  height: 32.418px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 5px;
+  background: #000;
+  border: none;
+}
+
+.ProductCard__buyButton:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.ProductCard__buyButtonLabel {
+  display: flex;
+  width: 70.56px;
+  height: 16.569px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
 }

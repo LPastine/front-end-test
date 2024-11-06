@@ -1,0 +1,7 @@
+.RatingStars {
+  display: flex;
+}
+
+.RatingStars__star {
+  margin-right: 5px;
+}
