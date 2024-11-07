@@ -32,7 +32,17 @@ habilidade de criar um código limpo, escalável e bem documentado.
 
 ### Comentário:
 
-Esse é um repositório padrão de React com Typescript. Para poder rodar esse projeto basta clonar o repositório e rodar o comando:
+Esse é um repositório padrão de React com Typescript. Para poder rodar esse projeto, seguir os seguintes passos:
+
+1. Clonar repositório
+
+2. Na root rodar npm install. (Disclaimer: a versão do node que utilizei durante o desenvolvimento foi a versão v20.17.0)
+
+```shell
+npm install
+```
+
+3. Depois de ter instalado as dependências, rodar npm run start para poder rodar o projeto localmente.
 
 ```shell
 npm run start
