@@ -12,7 +12,11 @@ const ProductShelf = () => {
     <section id="product-shelf" className={styles.ProductShelf}>
       <h1 className={styles.ProductShelf__title}>Mais Vendidos</h1>
       <div className={styles.ProductShelf__wrapper}>
-        {loading ? <Skeleton /> : products && <Carousel products={products} />}
+        {loading || !products?.length ? (
+          <Skeleton />
+        ) : (
+          products && <Carousel products={products} />
+        )}
       </div>
     </section>
   );
