@@ -54,9 +54,7 @@ npm run start
 
 ### Comentário:
 
-```
 As tecnologias utilizadas por esse projeto incluem as exigidas pelo desafio (HTML, CSS, JavaScript/TypeScript e React). A responsividade e acessibilidade foi respeitada, seguindo as exigências pelo design do Figma o mais fielmente possível, dentro do prazo estimado.
-```
 
 ## Desafio:
 
@@ -91,7 +89,6 @@ Desenvolva uma página web baseada no layout e nas APIs fornecidas. A página de
 
 ### Comentário:
 
-```
 Foi realizada a integração com a API de produtos devidamente para listar os produtos na vitrine principal.
 
 A vitrine exibe o nome, imagem, preços dos produtos e demais detalhes disponíveis, como parcelamento e avaliações.
@@ -105,7 +102,6 @@ Foi utilizada a ContextAPI para que ao clickar no botão de comprar fosse adicio
 Foi adicionada persistência utilizando o CartContext e localStorage.
 
 Nos dispositivos desktop, foi adicionada a funcionalidade de hover para visualizar o botão comprar, seguindo o exemplo do Design System.
-```
 
 <b>Formulário de Contato</b>
 
@@ -132,7 +128,6 @@ Nos dispositivos desktop, foi adicionada a funcionalidade de hover para visualiz
 
 ### Comentário:
 
-```
 No Formulário de Contato foi realizada uma implementação bem
 completa do que deve ser realizado em um formulário.
 
@@ -149,7 +144,6 @@ sucesso pro usuário.
 
 Cada um dos estados do Formulário de Contato seguem o Design
 System disponibilizado.
-```
 
 ## Critérios de Avaliação:
 
@@ -176,7 +170,6 @@ System disponibilizado.
 
 ### Comentário:
 
-```
 A semântica web foi bem respeitada, pois os testes de Lighthouse tanto para desktop como para mobile, deram acima de 90.
 
 O código foi organizado utilizando boas práticas de Atomic Design, pois os componentes estão distribuídos em atoms, molecules e organisms, segundo a estrutura do site, como também o seu grau de responsabilidade e possibilidade de reutilização dentro do cenário apresentado.
@@ -193,7 +186,6 @@ Para gerar o build do código pode ser utilizado o comando npm run build como po
 
 Mas não tem implementações de automação de tarefas significativas. Pois, trata-se de um projeto pequeno, ainda que poderia ser demonstrativo do conhecimento sobre
 esse tipo de práticas.
-```
 
 ## Bônus:
 
@@ -208,6 +200,4 @@ esse tipo de práticas.
 
 ### Comentário:
 
-```
 Não foram implementados testes automatizados, nem otimização de performance de uma forma direta. Poderia ter servido de exemplo de TDD ou de otimização de performance, ainda que com bons resultados segundo os resultados do Lighthouse, mas por causa do tempo, a performance não foi otimizada no seu ponto máximo, nem testes utilizando essas bibliotecas mencionadas.
-```
