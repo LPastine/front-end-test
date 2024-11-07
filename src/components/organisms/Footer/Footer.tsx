@@ -13,13 +13,21 @@ const Footer = () => {
         {!isMobile && (
           <div className={`${styles.Footer__top}`}>
             <div className={`${styles.Footer__contactButtons}`}>
-              <button className={`${styles.Footer__contactButton}`}>
+              <button
+                id="contact-button"
+                aria-label="Contact Button"
+                className={`${styles.Footer__contactButton}`}
+              >
                 <div className={`${styles.Footer__contactButton__icon}`}>
                   <MailIcon />
                 </div>
                 ENTRE EM CONTATO
               </button>
-              <button className={`${styles.Footer__contactButton}`}>
+              <button
+                id="contact-center-button"
+                aria-label="Contact Center Button"
+                className={`${styles.Footer__contactButton}`}
+              >
                 <div className={`${styles.Footer__contactButton__icon}`}>
                   <ContactIcon />
                 </div>
@@ -43,13 +51,21 @@ const Footer = () => {
           </div>
           {isMobile && (
             <div className={`${styles.Footer__contactButtons}`}>
-              <button className={`${styles.Footer__contactButton}`}>
+              <button
+                id="contact-button-mobile"
+                aria-label="Contact Button Mobile"
+                className={`${styles.Footer__contactButton}`}
+              >
                 <div className={`${styles.Footer__contactButton__icon}`}>
                   <MailIcon />
                 </div>
                 ENTRE EM CONTATO
               </button>
-              <button className={`${styles.Footer__contactButton}`}>
+              <button
+                id="contact-center-button-mobile"
+                aria-label="Contact Center Button Mobile"
+                className={`${styles.Footer__contactButton}`}
+              >
                 <div className={`${styles.Footer__contactButton__icon}`}>
                   <ContactIcon />
                 </div>

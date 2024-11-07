@@ -1,9 +1,7 @@
-import { createContext, useContext, useReducer } from "react";
-
+import { createContext, useContext, useReducer, useEffect } from "react";
 import type { ICartContext } from "./typings/CartContext";
 
 const CartContext = createContext<ICartContext | undefined>(undefined);
-
 const CartContextDispatch = createContext<Dispatch | undefined>(undefined);
 
 type Dispatch = (action: Action) => void;
@@ -36,7 +34,20 @@ const CartProvider = ({ children }: any) => {
     productsOnCart: 0,
   };
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState, (initial) => {
+    const storedQuantity = localStorage.getItem("productsOnCart");
+    return {
+      ...initial,
+      productsOnCart: storedQuantity ? JSON.parse(storedQuantity) : 0,
+    };
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      "productsOnCart",
+      JSON.stringify(state.productsOnCart)
+    );
+  }, [state.productsOnCart]);
 
   return (
     <CartContext.Provider value={state}>
@@ -49,25 +60,21 @@ const CartProvider = ({ children }: any) => {
 
 const useCartContext = () => {
   const cartContext = useContext(CartContext);
-
   if (!cartContext) {
     throw new Error(
-      "useCartContext has to be used within <CartContext.Provider>"
+      "useCartContext must be used within <CartContext.Provider>"
     );
   }
-
   return cartContext;
 };
 
 const useCartContextDispatch = () => {
   const cartContextDispatch = useContext(CartContextDispatch);
-
   if (!cartContextDispatch) {
     throw new Error(
-      "useCartContextDispatch has to be used within <CartContextDispatch.Provider>"
+      "useCartContextDispatch must be used within <CartContextDispatch.Provider>"
     );
   }
-
   return cartContextDispatch;
 };
 

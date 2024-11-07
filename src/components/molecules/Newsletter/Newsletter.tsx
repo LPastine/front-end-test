@@ -120,7 +120,12 @@ const Newsletter = () => {
                   </div>
                 )}
               </div>
-              <button type="submit" className={`${styles.Newsletter__button}`}>
+              <button
+                id="form-submit-button"
+                aria-label="Form Submit Button"
+                type="submit"
+                className={`${styles.Newsletter__button}`}
+              >
                 {loading ? "Carregando..." : "Eu quero!"}
               </button>
             </form>
@@ -136,6 +141,8 @@ const Newsletter = () => {
               A partir de agora você receberá as novidades e ofertas exclusivas.
             </p>
             <button
+              id="retry-button"
+              aria-label="Retry Button"
               onClick={(e) => handleRetryButton(e)}
               className={`${styles.Newsletter__retryButton}`}
             >

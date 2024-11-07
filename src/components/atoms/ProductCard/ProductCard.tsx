@@ -44,6 +44,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <img
           src={imageUrl}
           alt={`product-card-img-${productId}`}
+          loading="lazy"
           className={`${styles.ProductCard__img}`}
         />
       </div>
@@ -88,6 +89,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <div className={`${styles.ProductCard__buyButtonContainer}`}>
           <button
+            id="buy-button"
+            aria-label="Buy Button"
             onClick={(e) => onClickHandler(e)}
             className={`${styles.ProductCard__buyButton}`}
           >

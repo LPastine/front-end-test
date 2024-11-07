@@ -48,10 +48,20 @@ const Carousel = ({ products }: CarouselProps) => {
           <ProductCard key={product.productId} product={product} />
         ))}
       </div>
-      <button className={styles.Carousel__prevBtn} onClick={handlePrev}>
+      <button
+        id="left-arrow"
+        aria-label="Left Arrow"
+        className={styles.Carousel__prevBtn}
+        onClick={handlePrev}
+      >
         <LeftArrow />
       </button>
-      <button className={styles.Carousel__nextBtn} onClick={handleNext}>
+      <button
+        id="right-arrow"
+        aria-label="Right Arrow"
+        className={styles.Carousel__nextBtn}
+        onClick={handleNext}
+      >
         <RightArrow />
       </button>
     </div>
